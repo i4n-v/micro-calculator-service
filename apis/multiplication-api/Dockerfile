@@ -1,6 +1,6 @@
 FROM node:18-alpine
 
-WORKDIR /root-aoi
+WORKDIR /multiplication-api
 
 COPY . .
 

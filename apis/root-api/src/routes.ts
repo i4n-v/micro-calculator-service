@@ -5,6 +5,6 @@ router.get('/', OperatorController.index);
 router.post('/sum', OperatorController.sum);
 router.post('/subtraction', OperatorController.subtraction);
 router.post('/multiplication', OperatorController.multiplication);
-router.post('/division', OperatorController.divisition);
+router.post('/division', OperatorController.division);
 
 export default router;

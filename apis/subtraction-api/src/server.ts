@@ -11,5 +11,5 @@ app.use(routes);
 app.use(errorHandlerMidleWare);
 
 app.listen(process.env.APP_PORT, () => {
-  console.log(`✅ Root server started at http://localhost:${process.env.APP_PORT}`);
+  console.log(`✅ Subtraction server started at http://localhost:${process.env.APP_PORT}`);
 });
