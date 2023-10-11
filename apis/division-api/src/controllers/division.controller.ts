@@ -10,9 +10,13 @@ class DivisionController {
   }
 
   async division(request: Request, response: Response, next: NextFunction) {
-    try {
-      const { first_operand, second_operand } = request.body;
+    const { first_operand, second_operand } = request.body;
 
+    if (second_operand === 0) {
+      throw new Error('Não é possível dividir por zero');
+    }
+
+    try {
       if (!first_operand || !second_operand) {
         return response.status(400).json({ message: 'Os operandos são obrigatórios.' });
       }
