@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: division-api-deployment
+  labels:
+    app: division-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: division-api
+  template:
+    metadata:
+      labels:
+        app: division-api
+    spec:
+      containers:
+        - name: division-api
+          image: i4nv/micro-calculator-service:division-api
+          ports:
+            - containerPort: 5004
+          env:
+            - name: APP_PORT
+              value: "5004"

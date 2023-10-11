@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: subtraction-api-deployment
+  labels:
+    app: subtraction-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: subtraction-api
+  template:
+    metadata:
+      labels:
+        app: subtraction-api
+    spec:
+      containers:
+        - name: subtraction-api
+          image: i4nv/micro-calculator-service:subtraction-api
+          ports:
+            - containerPort: 5002
+          env:
+            - name: APP_PORT
+              value: "5002"

@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: subtraction-api-service
+spec:
+  selector:
+    app: subtraction-api
+  type: ClusterIP
+  ports:
+    - port: 5002
+      targetPort: 5002

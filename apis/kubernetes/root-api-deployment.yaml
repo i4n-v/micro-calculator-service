@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: root-api-deployment
+  labels:
+    app: root-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: root-api
+  template:
+    metadata:
+      labels:
+        app: root-api
+    spec:
+      containers:
+        - name: root-api
+          image: i4nv/micro-calculator-service:root-api
+          ports:
+            - containerPort: 5000
+          env:
+            - name: APP_PORT
+              value: "5000"
+            - name: SUM_API_URL
+              value: "http://sum-api-service:5001"
+            - name: SUBTRACTION_API_URL
+              value: "http://subtraction-api-service:5002"
+            - name: MULTIPLICATION_API_URL
+              value: "http://multiplication-api-service:5003"
+            - name: DIVISION_API_URL
+              value: "http://division-api-service:5004"

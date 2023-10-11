@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multiplication-api-deployment
+  labels:
+    app: multiplication-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: multiplication-api
+  template:
+    metadata:
+      labels:
+        app: multiplication-api
+    spec:
+      containers:
+        - name: multiplication-api
+          image: i4nv/micro-calculator-service:multiplication-api
+          ports:
+            - containerPort: 5003
+          env:
+            - name: APP_PORT
+              value: "5003"

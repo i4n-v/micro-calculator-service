@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: root-api-service
+spec:
+  selector:
+    app: root-api
+  type: ClusterIP
+  ports:
+    - port: 5000
+      targetPort: 5000

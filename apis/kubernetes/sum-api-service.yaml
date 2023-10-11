@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: sum-api-service
+spec:
+  selector:
+    app: sum-api
+  type: ClusterIP
+  ports:
+    - port: 5001
+      targetPort: 5001
