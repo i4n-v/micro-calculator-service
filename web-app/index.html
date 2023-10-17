@@ -37,6 +37,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="env.js"></script>
 
     <script>
         function calculate() {
@@ -53,16 +54,16 @@
             let url = "";
             switch (operator) {
                 case '+':
-                    url = "http://localhost:5001/sum";
+                    url = `${window.API_URL}/sum`;
                     break;
                 case '-':
-                    url = "http://localhost:5002/subtraction";
+                    url = `${window.API_URL}/subtraction`;
                     break;
                 case '*':
-                    url = "http://localhost:5003/multiplication";
+                    url = `${window.API_URL}/multiplication`;
                     break;
                 case '/':
-                    url = "http://localhost:5004/division";
+                    url = `${window.API_URL}/division`;
                     break;
                 default:
                     alert("Operador inválido");
@@ -87,4 +88,5 @@
         }
     </script>
 </body>
+
 </html>
